@@ -5,10 +5,10 @@
  * integrates the Dev Panel in development mode.
  */
 
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useMemo } from 'react';
 import { PermissionsProvider } from '../react/PermissionsProvider';
 import { DevPanel } from './DevPanel';
-import { useDevRegister } from './useDevRegister';
+import { useDevRegister, useDevToolsState } from './useDevRegister';
 import type { PermissionsConfig } from '../core/types';
 
 interface PermissionsRootProps<TUser = any> extends PermissionsConfig<TUser> {
@@ -36,9 +36,28 @@ interface PermissionsRootProps<TUser = any> extends PermissionsConfig<TUser> {
  */
 export function PermissionsRoot<TUser = any>(props: PermissionsRootProps<TUser>) {
   const registerEvaluation = useDevRegister();
+  const devState = useDevToolsState();
+  
+  // Apply dev tools overrides if they exist
+  const effectiveProps = useMemo(() => {
+    const hasOverrides = devState.overrideRoles !== undefined ||
+                        devState.overridePermissions !== undefined ||
+                        devState.overrideFlags !== undefined;
+    
+    if (!hasOverrides) {
+      return props;
+    }
+    
+    return {
+      ...props,
+      roles: devState.overrideRoles ?? props.roles,
+      permissions: devState.overridePermissions ?? props.permissions,
+      flags: devState.overrideFlags ?? props.flags,
+    };
+  }, [props, devState.overrideRoles, devState.overridePermissions, devState.overrideFlags]);
   
   return (
-    <PermissionsProvider {...props} onEvaluationRegister={registerEvaluation}>
+    <PermissionsProvider {...effectiveProps} onEvaluationRegister={registerEvaluation}>
       {props.children}
       <DevPanel />
     </PermissionsProvider>
