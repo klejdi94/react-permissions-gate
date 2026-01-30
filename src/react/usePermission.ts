@@ -62,7 +62,7 @@ export function usePermission<TUser = any, TResource = any>(
     return () => {
       cancelled = true;
     };
-  }, [context.evaluatePermission, context.roles, context.permissions, context.flags, check, resource, mode]);
+  }, [context.evaluatePermission, check, resource, mode]);
   
   return state;
 }

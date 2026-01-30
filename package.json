@@ -1,6 +1,6 @@
 {
   "name": "react-auth-gate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A production-grade React authorization framework for RBAC, PBAC, ABAC, feature flags, and async permission checks",
   "main": "dist/index.js",
   "module": "dist/index.js",
