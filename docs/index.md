@@ -120,6 +120,20 @@ The built-in dev panel lets you:
 
 **Automatically enabled in development mode!**
 
+### Screenshots
+
+**Evaluations Tab** - See all permission checks in real-time:
+
+![Dev Panel Evaluations](./assets/devpanel-evaluations.png)
+
+**Overrides Tab** - Override roles, permissions, and feature flags:
+
+![Dev Panel Overrides](./assets/devpanel-overrides.png)
+
+**Context Tab** - View current user context:
+
+![Dev Panel Context](./assets/devpanel-context.png)
+
 ---
 
 ## 📖 Documentation

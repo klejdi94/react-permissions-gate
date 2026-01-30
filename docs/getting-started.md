@@ -169,6 +169,15 @@ The dev panel is **automatically enabled in development mode**. It allows you to
 
 Press the floating button in the bottom-right corner to open it!
 
+### Preview
+
+![Dev Panel](./assets/devpanel-evaluations.png)
+
+The dev panel has three tabs:
+1. **Evaluations** - Real-time permission checks
+2. **Overrides** - Test different roles/permissions
+3. **Context** - Current user and configuration
+
 ---
 
 [← Back to Home](./) | [API Reference →](./api.html)
