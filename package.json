@@ -1,6 +1,6 @@
 {
   "name": "react-permissions-gate",
-  "version": "0.0.1-unstable",
+  "version": "0.0.1",
   "description": "A production-grade React authorization framework for RBAC, PBAC, ABAC, feature flags, and async permission checks",
   "main": "dist/index.js",
   "module": "dist/index.js",
