@@ -1,0 +1,15 @@
+title: React Auth Gate
+description: Production-grade React authorization framework for RBAC, PBAC, ABAC, feature flags, and async permission checks
+theme: jekyll-theme-cayman
+url: "https://klejdi94.github.io"
+baseurl: "/react-auth-gate"
+github_username: klejdi94
+repository: klejdi94/react-auth-gate
+
+plugins:
+  - jekyll-seo-tag
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
